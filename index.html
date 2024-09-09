@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad unidad 2</title>
+</head>
+<style>
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    div{
+        width: 1000px;
+        height: auto;
+        background: #75dfff;
+        margin-top: 10px;
+        padding: 10px;
+    }
+</style>
+<body>
+    <h1>Estructuras de Datos</h1>
+    <div>
+        <h2>Arrays (Arreglos)</h2>
+        <p><b>Definición</b></p>
+        <p>Un arreglo es una estructura de datos que almacena una colección de elementos del mismo tipo en una secuencia contigua de memoria. Cada elemento del arreglo se identifica mediante un índice o subíndice, que generalmente comienza en 0.</p>
+        <p>Características:</p>
+        <ul>
+            <li>Tamaño Fijo: Una vez que se define el tamaño del arreglo, este no puede cambiar (en lenguajes estáticamente tipados como C++ o Java).</li>
+            <li>Acceso Directo: Los elementos se pueden acceder directamente mediante su índice, lo que permite operaciones eficientes.</li>
+            <li>Homogeneidad: Todos los elementos del arreglo son del mismo tipo de datos.</li>
+            <li>Contiguidad en Memoria: Los elementos se almacenan en ubicaciones de memoria adyacentes.</li>
+        </ul>
+        <p><b>Operaciones Básicas</b></p>
+        <p>Acceso: Para acceder a un elemento del arreglo, se utiliza su índice.</p>
+        <p>Inserción: La inserción de un elemento en un arreglo puede ser un poco más complicada en arreglos de tamaño fijo porque a menudo requiere la creación de un nuevo arreglo con un tamaño mayor.</p>
+        <p>Eliminación: La eliminación de un elemento también puede requerir la creación de un nuevo arreglo (en lenguajes con tamaño fijo) o la reubicación de elementos. En lenguajes con arreglos dinámicos, puedes usar métodos específicos para eliminar elementos.</p>
+        <p><b>Arrays Multidimensionales</b></p>
+        <p>Un arreglo multidimensional es un arreglo de arreglos. El tipo más común es el arreglo bidimensional, que se puede pensar como una tabla o matriz.</p>
+    </div>
+    <div>
+        <h2>Listas Enlazadas</h2>
+        <p>Listas enlazadas simples</p>
+        <p>Una lista enlazada simple es una estructura de datos en la que cada elemento (nodo) contiene un valor y una referencia (enlace) al siguiente nodo en la secuencia. El último nodo de la lista apunta a null, indicando el final de la lista.</p>
+        <ul>
+            <li>Inserción: Para insertar un nuevo elemento en una lista enlazada simple, se crea un nuevo nodo con el valor deseado. Si se inserta al principio, el nuevo nodo apunta al nodo actual de inicio, y luego se actualiza el puntero de inicio para que apunte al nuevo nodo. Si se inserta al final, se recorre la lista hasta el último nodo y se actualiza el puntero Siguiente del último nodo para que apunte al nuevo nodo.</li>
+            <li>Eliminación: Para eliminar un nodo, se recorre la lista buscando el nodo a eliminar. Una vez encontrado, se ajusta el puntero Siguiente del nodo anterior para que apunte al nodo siguiente al que se desea eliminar, y se actualiza el puntero de inicio si el nodo a eliminar es el primero.</li>
+            <li>Búsqueda: Para buscar un valor, se comienza en el nodo de inicio y se recorre la lista comparando el valor de cada nodo con el valor buscado. Si se encuentra el valor, se devuelve el nodo; si se llega al final de la lista sin encontrar el valor, se indica que el valor no está presente.</li>
+        </ul>
+        <p>Listas doblemente enlazadas</p>
+        <p><b>Una lista doblemente enlazada es similar a una lista enlazada simple, pero cada nodo tiene dos referencias: una al siguiente nodo y otra al nodo anterior. Esto permite recorrer la lista en ambas direcciones.</b></p>
+        <ul>
+            <li>Inserción: Al insertar un nodo en una lista doblemente enlazada, se debe actualizar tanto el puntero Siguiente como el puntero Anterior. Si se inserta al inicio, el nuevo nodo debe apuntar al nodo que era el inicio y actualizarse para que el nodo anterior del antiguo inicio apunte al nuevo nodo. Si se inserta al final, se actualiza el puntero Siguiente del último nodo para que apunte al nuevo nodo, y el puntero Anterior del nuevo nodo para que apunte al antiguo último nodo.</li>
+            <li>Eliminación: Para eliminar un nodo, se recorre la lista para encontrar el nodo objetivo. Se ajustan los punteros Siguiente y Anterior del nodo anterior y el siguiente para excluir el nodo eliminado de la secuencia. Si el nodo a eliminar es el primero, se actualiza el puntero de inicio de la lista.</li>
+            <li>Búsqueda: La búsqueda en una lista doblemente enlazada sigue el mismo proceso que en una lista simple: se comienza desde el inicio y se recorre la lista comparando el valor de cada nodo con el valor buscado. Si se encuentra el valor, se devuelve el nodo; si no se encuentra, se indica que el valor no está presente.</li>
+        </ul>
+        <p><b>Listas circularmente enlazadas</b></p>
+        <p>Una lista circularmente enlazada es una lista en la que el último nodo apunta al primer nodo, formando un ciclo. Esto puede aplicarse tanto a listas enlazadas simples como a listas doblemente enlazadas.</p>
+        <ul>
+            <li>Inserción: En una lista circularmente enlazada, al insertar un nuevo nodo, se hace que el nuevo nodo apunte al nodo de inicio. Luego, se recorre la lista para encontrar el último nodo y se actualiza su puntero Siguiente para que apunte al nuevo nodo, manteniendo así la circularidad.</li>
+            <li>Eliminación: Para eliminar un nodo en una lista circular, se busca el nodo a eliminar. Luego, se ajustan los punteros Siguiente del nodo anterior y el siguiente para excluir el nodo eliminado del ciclo. Si se elimina el nodo de inicio, se actualiza el puntero de inicio y se ajusta el puntero Siguiente del último nodo para que apunte al nuevo nodo de inicio.</li>
+            <li>Búsqueda: La búsqueda en una lista circular comienza en el nodo de inicio y se recorre la lista, comparando el valor de cada nodo con el valor buscado. Debido a la naturaleza circular, es necesario controlar que no se vuelva al nodo de inicio antes de haber encontrado el valor buscado, para evitar un bucle infinito.</li>
+        </ul>
+    </div>
+    <div>
+        <h2>Pilars (Stacks)</h2>
+        <p><b>Principio LIFO (Last In, First Out)</b></p>
+        <p>El principio LIFO es un método de organización y manipulación de datos en el que el último elemento añadido es el primero en ser retirado. En otras palabras, el último elemento que se introduce en una estructura de datos es el primero que se elimina. Este principio es fundamental en estructuras como las pilas (stacks).</p>
+        <p><b>Operaciones: push, pop, peek</b></p>
+        <p>Push: Agrega un elemento a la parte superior de la pila.</p>
+        <p>Pop: Elimina el elemento de la parte superior de la pila y lo devuelve.</p>
+        <p>Peek (o Top): Devuelve el elemento de la parte superior de la pila sin eliminarlo.</p>
+        <p><b>Implementación usando arrays o listas enlazadas</b></p>
+        <p>Son dos estructuras de datos fundamentales que se utilizan para almacenar colecciones de elementos.</p>
+    </div>
+    <div>
+        <h2>Colas (Queues)</h2>
+        <p><b>Principio FIFO (First In, First Out)</b></p>
+        <p>FIFO es un principio que dicta que el primer elemento en ser añadido a la cola será el primero en ser retirado. Este enfoque es común en escenarios donde el orden de procesamiento debe seguir el orden de llegada.</p>
+        <p><b>Colas simples</b></p>
+        <p>Una cola simple es una estructura de datos que sigue el principio FIFO. En esta estructura, los elementos se añaden al final y se eliminan desde el principio.</p>
+        <p><b>Colas circulares</b></p>
+        <p>Una cola circular es una versión optimizada de la cola simple que usa un arreglo circular para manejar los elementos. Cuando el final del arreglo es alcanzado, el índice de la cola vuelve al inicio si hay espacio disponible. Esto evita el desperdicio de espacio y mejora la eficiencia en la gestión de la memoria.</p>
+        <p><b>Colas de prioridad</b></p>
+        <p>Una cola de prioridad es una estructura de datos en la que cada elemento tiene una prioridad asociada. Los elementos se procesan en el orden de su prioridad, no en el orden de llegada. Los elementos con mayor prioridad se eliminan primero.</p>
+        <p><b>Operaciones: enqueue, dequeue, front</b></p>
+        <p>Enqueue: es la operación que añade un elemento al final de la cola. Es un acrónimo de "enqueue", que proviene de la combinación de "in" y "queue". En una cola simple, esto implica agregar el elemento al final de la secuencia de elementos almacenados. En una cola circular, la operación también añade el elemento al final, pero en un arreglo circular, lo hace en la posición adecuada considerando el wrap-around.</p>
+        <p>Dequeue: es la operación que elimina y devuelve el elemento en el frente de la cola. La operación sigue el principio FIFO, por lo que el primer elemento en entrar es el primero en salir. En una cola simple, esto implica eliminar el elemento en la posición inicial de la secuencia.</p>
+        <p>Front: es la operación que devuelve el elemento en el frente de la cola sin eliminarlo. Permite ver cuál es el próximo elemento en ser removido sin modificar la cola. Esto es útil para operaciones de consulta donde se necesita acceder al próximo elemento a procesar sin alterarlo.</p>
+    </div>
+    <div>
+        <h2>Árboles</h2>
+        <p><b>Árbol Binario</b></p>
+        <p>Es una estructura de datos en la que cada nodo tiene a lo sumo dos hijos, llamados hijo izquierdo y hijo derecho.</p>
+        <p><b>Árbol de búsqueda binaria (BST)</b></p>
+        <p>Es un árbol binario en el que para cada nodo, todos los valores en el subárbol izquierdo son menores que el valor del nodo, y todos los valores en el subárbol derecho son mayores.</p>
+        <p><b>Árbol AVL (autobalanceado)</b></p>
+        <P>Un árbol AVL es un tipo de árbol binario de búsqueda auto-balanceado. Mantiene un equilibrio estricto, asegurando que la diferencia de altura entre los subárboles izquierdo y derecho de cualquier nodo sea a lo sumo 1.</P>
+        <P><b> Árbol B</b></P>
+        <P>Un árbol B es un árbol auto-balanceado de búsqueda que mantiene sus datos ordenados y permite búsquedas, inserciones y eliminaciones en tiempo logarítmico. Está diseñado para ser usado en sistemas de archivos y bases de datos.</P>
+        <P><b>Árbol N-ario</b></P>
+        <P>Un árbol N-ario es un árbol en el que cada nodo puede tener hasta N hijos.</P>
+        <P><b>Operaciones: inserción, eliminación, recorrido (inorden, preorden, postorden)</b></P>
+        <P>La inserción es el proceso de agregar un nuevo nodo en un árbol. </P>
+        <P>La eliminación de un nodo en un árbol es más compleja que la inserción porque puede requerir ajustes adicionales para mantener las propiedades del árbol.</P>
+        <P>El recorrido se refiere al proceso de visitar todos los nodos en un árbol de una manera específica.</P>
+        <ul>
+            <li>Recorrido Inorden (In-order): Visita el subárbol izquierdo, el nodo actual, y luego el subárbol derecho. Esto da como resultado una secuencia de nodos en orden ascendente en un BST.</li>
+            <li>Recorrido Preorden (Pre-order): Visita el nodo actual, luego el subárbol izquierdo, y finalmente el subárbol derecho. Esto es útil para crear una copia del árbol.</li>
+            <li>Recorrido Postorden (Post-order): Visita el subárbol izquierdo, luego el subárbol derecho, y finalmente el nodo actual. Es útil para eliminar el árbol o liberar memoria de manera segura.</li>
+        </ul>
+    </div>
+    <div>
+        <h2>Grafos</h2>
+        <p><b>ón y representación (matriz de adyacencia, lista de adyacencia)</b></p>
+        <p>Un grafo es una estructura de datos que se utiliza para representar relaciones entre pares de objetos.</p>
+        <p>Los grafos pueden ser representados de diferentes maneras, las más comunes son:</p>
+        <ul>
+            <li>Matriz de Adyacencia</li>
+            <p>Ejemplo: Considera un grafo con 3 vértices y 2 aristas: (1,2) y (2,3). La matriz de adyacencia sería:</p>
+            <pre>
+                1  2  3
+                1 0  1  0
+                2 1  0  1
+                3 0  1  0
+            </pre>
+            <li>Lista de Adyacencia</li>
+            <p>Ejemplo: Usando el mismo grafo anterior, la lista de adyacencia sería:</p>
+            <pre>
+                1: [2]
+                2: [1, 3]
+                3: [2]
+            </pre>
+        </ul>
+        <p><b>Grafos Dirigidos y No Dirigidos</b></p>
+        <ul>
+            <li>Grafos Dirigidos: Las aristas tienen una dirección, es decir, van de un vértice a otro. Se denota comúnmente con flechas. Ejemplo: (1 → 2).</li>
+            <li>Grafos No Dirigidos: Las aristas no tienen una dirección, y se representan simplemente como conexiones entre pares de vértices. Ejemplo: (1 -- 2).</li>
+        </ul>
+        <p><b>Grafos ponderados y no ponderados</b></p>
+        <ul>
+            <li>Grafos Ponderados: Las aristas tienen un peso o costo asociado. Se usa para representar, por ejemplo, distancias o costos.</li>
+            <li>Grafos No Ponderados: Las aristas no tienen peso. Se representan simplemente como conexiones entre vértices sin valor adicional.</li>
+        </ul>
+        <p><b>Algoritmos básicos: BFS (Breadth-First Search), DFS (Depth-First Search) en la programacion</b></p>
+        <p>BFS (Breadth-First Search); el algoritmo BFS explora los vértices de un grafo en orden de cercanía al vértice inicial. Utiliza una cola para gestionar los vértices a explorar.</p>
+        <p>DFS (Depth-First Search); el algoritmo DFS explora los vértices de un grafo en profundidad antes de retroceder. Utiliza una pila (o recursión) para gestionar los vértices a explorar.</p>
+   </div>
+   <div>
+        <h2>Tablas Hash</h2>
+        <p><b>Concepto de función hash</b></p>
+        <p>Una función hash es un algoritmo que toma una entrada (o clave) y produce un valor de tamaño fijo, conocido como valor hash o código hash. Este valor se utiliza para determinar la posición en la tabla hash donde se almacenará el dato asociado a la clave.</p>
+        <p><b>Manejo de colisiones (encadenamiento, direccionamiento abierto)</b></p>
+        <p>Una colisión ocurre cuando dos o más claves diferentes producen el mismo valor hash, lo que significa que intentan ocupar la misma posición en la tabla hash. Para manejar estas colisiones, se utilizan dos enfoques principales:</p>
+        <ul>
+            <li>En el encadenamiento, cada posición en la tabla hash apunta a una lista (o a una estructura similar) que almacena todas las entradas que tienen el mismo valor hash. Cuando se produce una colisión, el nuevo elemento se agrega a la lista correspondiente en la posición de la tabla hash.</li>
+            <li>En el direccionamiento abierto, todos los elementos se almacenan directamente en la tabla hash. Cuando ocurre una colisión, se busca una posición alternativa dentro de la tabla para colocar el nuevo elemento.</li>
+        </ul>
+        <p><b>Operaciones básicas: inserción, búsqueda, eliminación</b></p>
+        <p>En una tabla hash, la inserción de un elemento implica calcular el valor hash de la clave, que determina la posición en la tabla donde se almacenará el dato. Si hay una colisión, se maneja según el método elegido, como encadenamiento o direccionamiento abierto. Para la búsqueda, se calcula el valor hash de la clave y se accede a la posición correspondiente en la tabla; en el caso de colisiones, se sigue el método de manejo de colisiones para localizar el elemento. La eliminación requiere calcular el valor hash, ubicar el elemento y luego removerlo, ajustando la estructura de datos según el método de colisiones para mantener la eficiencia de las operaciones.</p>
+   </div>
+   <div>
+        <h2>Algoritmos de Ordenación</h2>
+        <P><b>Ordenación por burbuja (Bubble Sort)</b>: Es un algoritmo simple que compara pares de elementos adyacentes en una lista y los intercambia si están en el orden incorrecto. Este proceso se repite hasta que la lista queda ordenada.</P>
+        <P><b>Ordenación por inserción (Insertion Sort)</b>: Este algoritmo construye la lista ordenada elemento por elemento, insertando cada nuevo elemento en su posición correcta dentro de la parte ya ordenada</P>
+        <P><b>Ordenación por selección (Selection Sort)</b>: encuentra el elemento más pequeño en cada iteración y lo coloca en la posición correcta.</P>
+        <P><b>Ordenación rápida (Quick Sort)</b>: divide la lista utilizando un pivote para ordenar sublistas de manera recursiva, siendo muy eficiente en promedio.</P>
+        <P><b>Ordenación por fusión (Merge Sort)</b>: divide la lista en mitades, ordena cada mitad recursivamente y luego las fusiona, garantizando un rendimiento consistente. </P>
+        <p><b>Ordenación por montículo (Heap Sort)</b>:  convierte la lista en un montículo (heap) y extrae el máximo para construir la lista ordenada, combinando eficiencia y estructura de datos.</p>
+   </div>
+   <div>
+        <h2>Algoritmos de Búsqueda</h2>
+        <p><b>Búsqueda lineal (Linear Search)</b>: Es un algoritmo que busca un elemento en una lista revisando cada elemento de forma secuencial hasta encontrar el objetivo o llegar al final de la lista.</p>
+        <p><b>Búsqueda binaria (Binary Search)</b>: Es un algoritmo eficiente que busca un elemento en una lista ordenada dividiendo repetidamente el rango de búsqueda a la mitad, comparando el elemento objetivo con el elemento central del rango actual.</p>
+        <p><b>Búsqueda en profundidad (DFS) en grafos</b>: Es un algoritmo que explora un grafo o árbol comenzando desde un nodo inicial y avanzando lo más profundo posible en cada rama antes de retroceder y explorar otras ramas.</p>
+        <p><b>Búsqueda en amplitud (BFS)</b>: Es un algoritmo que explora un grafo o árbol nivel por nivel, comenzando desde un nodo inicial y explorando todos los nodos vecinos antes de pasar a los nodos de nivel siguiente.</p>
+   </div>
+   <div>
+        <h2>Algoritmos de Grafos</h2>
+        <p><b>Algoritmo de Dijkstra (camino más corto en grafos ponderados)</b>: Este algoritmo encuentra el camino más corto desde un nodo de origen a todos los demás nodos en un grafo ponderado con pesos no negativos. Utiliza una estructura de datos de cola de prioridad para seleccionar el nodo más cercano en cada iteración.</b></p>
+        <p><b>Algoritmo de Bellman-Ford (camino más corto en grafos con pesos negativos)</b>: Diseñado para encontrar el camino más corto desde un nodo origen a todos los demás nodos en un grafo ponderado que puede tener pesos negativos. También detecta ciclos de peso negativo en el grafo, lo cual no es posible con el algoritmo de Dijkstra.</b></p>
+        <p><b>Algoritmo de Floyd-Warshall (camino más corto entre todos los pares)</b>: Este algoritmo calcula el camino más corto entre todos los pares de nodos en un grafo, ya sea que los pesos de las aristas sean negativos o no. Utiliza una matriz de distancias que se actualiza iterativamente.</b></p>
+        <p><b>Algoritmo de Kruskal (árbol de expansión mínima)</b>: Este algoritmo encuentra el árbol de expansión mínima (MST) de un grafo, que es un subconjunto de las aristas que conecta todos los nodos con el costo total mínimo sin formar ciclos. Ordena todas las aristas por peso y agrega las más ligeras, asegurando que no se formen ciclos.</b></p>
+        <p><b>Algoritmo de Prim (árbol de expansión mínima)</b>: También busca el árbol de expansión mínima en un grafo, pero a diferencia de Kruskal, comienza desde un nodo inicial y crece el MST agregando aristas que conectan el conjunto de nodos ya incluidos con los nodos restantes, seleccionando siempre la arista más ligera.</p>
+   </div>
+   <div>
+        <h2>Algoritmos de Programación Dinámica</h2>
+        <p><b>Concepto de programación dinámica</b>: es una técnica de resolución de problemas que se utiliza para resolver problemas complejos dividiéndolos en subproblemas más simples.</p>
+        <p><b>Problemas clásicos: mochila, secuencia de Fibonacci, cadena de matrices</b>; los problemas clásicos en ciencias de la computación y matemáticas como la mochila, la secuencia de Fibonacci y la cadena de matrices son fundamentales para entender algoritmos y optimización. El problema de la mochila consiste en seleccionar un subconjunto de objetos con pesos y valores dados para maximizar el valor total sin exceder un peso máximo. La secuencia de Fibonacci es una serie en la que cada número es la suma de los dos anteriores, con aplicaciones en el análisis de algoritmos y la modelización de fenómenos naturales. La cadena de matrices se refiere a la optimización del orden de multiplicación de una secuencia de matrices para minimizar el número total de operaciones necesarias. Estos problemas ilustran conceptos clave en programación dinámica y técnicas de optimización.</p>
+        <p><b>Técnica de memoización y tabulación</b>: La Memoización es una técnica en la que se almacenan los resultados de las subsoluciones para evitar recalcular los resultados de los mismos subproblemas. Normalmente se usa en enfoques recursivos para optimizar el tiempo de ejecución. y la Tabulación es una técnica iterativa en la que se resuelven y almacenan soluciones a subproblemas en una tabla (generalmente un array o una matriz). Se construye la solución a partir de soluciones a subproblemas más pequeños de manera sistemática, sin recurrir a la recursividad.</p>
+   </div>
+   <div>
+        <h2>Algoritmos de Divide y Vencerás</h2>
+        <p><b>Concepto de divide y vencerás</b>: Es una estrategia para resolver problemas complejos dividiéndolos en subproblemas más pequeños y manejables, resolviendo cada uno de manera recursiva y luego combinando las soluciones para obtener el resultado final.</p>
+        <p>Ejemplos de algoritmos que aplican este enfoque son Merge Sort, que ordena una lista dividiéndola en mitades, ordenándolas por separado y luego fusionándolas; Quick Sort, que también ordena una lista dividiéndola en función de un pivote y ordenando las particiones; y Búsqueda Binaria, que encuentra un elemento en una lista ordenada dividiéndola repetidamente en mitades para reducir el espacio de búsqueda.</p>
+   </div>
+   <div>
+        <h2>Complejidad Computacional</h2>
+        <p><b>Notación Big O</b>: Es una notación utilizada para describir el rendimiento o la complejidad de un algoritmo en términos de su tiempo de ejecución o uso de memoria en función del tamaño de la entrada. Representa el límite superior en el peor de los casos.</p>
+        <p><b>Análisis de tiempo y espacio</b>:  Es el proceso de determinar la cantidad de tiempo y memoria que un algoritmo requiere en función del tamaño de la entrada. El análisis de tiempo mide la duración de ejecución, mientras que el análisis de espacio mide la memoria utilizada.</p>
+        <p><b>Casos promedio, mejor y peor caso</b>: </p>
+        <ul>
+            <li>Mejor caso: El rendimiento del algoritmo en el escenario más favorable posible.</li>
+            <li>Peor caso: El rendimiento del algoritmo en el escenario más desfavorable posible.</li>
+            <li>Caso promedio: El rendimiento del algoritmo en un escenario típico o promedio, considerando distribuciones probables de las entradas.</li>
+        </ul>
+   </div>
+   <div>
+        <h2>Técnicas de Optimización</h2>
+        <p><b>Estrategias para mejorar la eficiencia</b>: Las estrategias para mejorar la eficiencia buscan optimizar el rendimiento de sistemas y procesos. Esto incluye la selección y mejora de algoritmos para minimizar el tiempo de ejecución y el uso de memoria.</p>
+        <p><b>Técnicas de poda (como poda alfa-beta en juegos)</b>: Las técnicas de poda se utilizan para reducir el espacio de búsqueda en problemas complejos, evitando la evaluación de opciones innecesarias. La poda alfa-beta es una técnica específica en el contexto de juegos y toma de decisiones. Funciona en el algoritmo minimax al mantener dos valores, alfa y beta, que representan los mejores resultados garantizados para los jugadores maximizador y minimizador, respectivamente. Durante la exploración del árbol de decisiones, si un nodo tiene un valor peor que el resultado garantizado de otro nodo ya evaluado, las ramas relacionadas con ese nodo se podan, es decir, se ignoran. Esto reduce significativamente el número de nodos que se deben evaluar, acelerando el proceso de búsqueda sin comprometer la calidad de la decisión final.</p>
+   </div>
+</body>
+</html>
